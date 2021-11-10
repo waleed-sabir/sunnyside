@@ -1,0 +1,84 @@
+:root {
+  // PRIMARY
+  --color-soft-red: hsl(7, 99%, 70%);
+  --color-yellow: hsl(51, 100%, 49%);
+  --color-dark-cyan: hsl(167, 40%, 24%);
+  --color-moderate-cyan: hsl(168, 34%, 41%);
+  --color-dark-blue: hsl(198, 62%, 26%);
+
+  // NEUTRAL
+  --color-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --color-darkest-greyish-blue: hsl(213, 9%, 39%);
+  --color-dark-greyish-blue: hsl(232, 10%, 55%);
+  --color-greyish-blue: hsl(210, 4%, 67%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+// FONT STYLES
+$font-primary: "Fraunces", sans-serif;
+$font-secondary: "Barlow", sans-serif;
+
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include breakpoint-up(medium) {
+    font-size: 68.75%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  color: var(--color-dark-greyish-blue);
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  font-family: $font-secondary;
+  color: var(--color-white);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+// Visibility
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

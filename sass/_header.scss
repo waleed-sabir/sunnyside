@@ -1,0 +1,185 @@
+.header {
+  position: relative;
+
+  &.open {
+    .header__menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3.2rem 2.4rem;
+
+    &--links {
+      font-size: 1.6rem;
+      backface-visibility: hidden;
+
+      a {
+        position: relative;
+        transition: all 0.2s;
+
+        &:not(:last-child) {
+          margin-right: 4.8rem;
+        }
+      }
+
+      a::after {
+        content: "";
+        display: block;
+        background-color: hsl(51, 100%, 49%);
+        position: absolute;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -5px;
+
+        transition: all 0.2s;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+      a:hover::after {
+        width: 100%;
+      }
+    }
+
+    &--btn {
+      font-size: 1.2rem;
+      font-family: $font-primary;
+      padding: 1.6rem 2.4rem;
+      text-transform: uppercase;
+      border-radius: 50px;
+      background-color: var(--color-white);
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: hsl(51, 100%, 49%);
+      }
+    }
+  }
+
+  &__menu {
+    > span {
+      display: block;
+      height: 2px;
+      width: 26px;
+      background-color: var(--color-white);
+      transform-origin: 3px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      transition: all 0.3s;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+
+    &.fade-out {
+      animation-name: fade-out;
+      animation-duration: 5s;
+    }
+
+    &.active {
+      position: absolute;
+      left: 8%;
+      z-index: 5;
+      display: block;
+      background-color: var(--color-white);
+      padding: 3.2rem 2.4rem;
+      margin: 0 auto;
+      margin-top: -2.2rem;
+      width: 84%;
+      clip-path: polygon(
+        0% 10%,
+        0% 10%,
+        90% 10%,
+        90% 10%,
+        90% 10%,
+        99% 1%,
+        99% 1%,
+        100% 0%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        0% 100%,
+        0% 100%,
+        0% 100%
+      );
+
+      &.fade-in {
+        animation-name: fade-in;
+        animation-duration: 0.5s;
+      }
+
+      a {
+        color: var(--color-dark-greyish-blue);
+        padding: 1.2rem;
+        display: block;
+        text-align: center;
+
+        &:not(:last-child) {
+          margin-bottom: 1.2rem;
+        }
+
+        &:first-child {
+          padding-top: 6.2rem;
+        }
+
+        &:last-child {
+          display: block;
+          padding: 1.6rem 0.8rem;
+          background-color: var(--color-yellow);
+          border-radius: 50px;
+          width: 50%;
+          margin: 0 auto;
+          text-transform: uppercase;
+          font-family: $font-primary;
+          font-size: 1.4rem;
+          color: #000;
+          margin-top: 2.8rem;
+          margin-bottom: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+%heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.heading--primary {
+  @extend %heading;
+  font-size: 4.4rem;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transform: translate(-50%, -400%);
+}
+
+.heading--arrow {
+  @extend %heading;
+  transform: translate(-50%, -30%);
+  z-index: 0;
+}

@@ -1,0 +1,78 @@
+.footer {
+  background-color: hsla(168, 34%, 41%, 0.5);
+  &__logo {
+    text-align: center;
+    padding-top: 6.4rem;
+    padding-bottom: 3.6rem;
+    cursor: pointer;
+  }
+
+  &__nav {
+    a {
+      color: hsla(167, 40%, 24%, 0.6);
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 7.6rem;
+
+    @include breakpoint-up(medium) {
+      padding-left: 8.8rem;
+      padding-right: 8.8rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding-left: 30rem;
+      padding-right: 30rem;
+    }
+
+    @include breakpoint-up(xlarge) {
+      padding-left: 46rem;
+      padding-right: 46rem;
+    }
+
+    &--link {
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-family: $font-secondary;
+
+      transition: all 0.2s;
+    }
+
+    &--link:hover {
+      color: #fff;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10rem;
+    padding-bottom: 7.6rem;
+
+    @include breakpoint-up(medium) {
+      padding-left: 20.8rem;
+      padding-right: 20.8rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding-left: 39rem;
+      padding-right: 39rem;
+    }
+
+    @include breakpoint-up(xlarge) {
+      padding-left: 56rem;
+      padding-right: 56rem;
+    }
+
+    &--icon {
+      cursor: pointer;
+    }
+
+    &--icon:hover {
+      filter: brightness(6);
+    }
+  }
+}

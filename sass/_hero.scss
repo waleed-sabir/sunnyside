@@ -1,0 +1,83 @@
+.hero {
+  height: 71.5vh;
+  display: block;
+
+  @include breakpoint-up(large) {
+    height: 80.1vh;
+  }
+
+  @include breakpoint-up(xlarge) {
+    height: 83vh;
+  }
+
+  &__img {
+    //   Mobile styles first
+    background-image: url(../images/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 90%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include breakpoint-up(medium) {
+      background-image: url(../images/desktop/image-header.jpg);
+      min-height: 100vh;
+
+      @include breakpoint-up(large) {
+        background-image: url(../images/desktop/image-header.jpg);
+        min-height: 100vh;
+      }
+    }
+  }
+
+  &__text {
+    h1 {
+      font-size: 3.4rem;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      text-align: center;
+
+      @include breakpoint-up(medium) {
+        top: 83%;
+      }
+
+      @include breakpoint-up(large) {
+        top: 60%;
+        width: 70%;
+      }
+
+      @include breakpoint-up(xlarge) {
+        font-size: 3.8rem;
+        top: 50%;
+        letter-spacing: 12px;
+      }
+    }
+
+    &--img {
+      position: absolute;
+      top: 50%;
+      left: 46%;
+      transform: translate(-50%, 0);
+      animation: 0.3s linear 1s infinite alternate moving-arrow;
+
+      @include breakpoint-up(medium) {
+        top: 45%;
+        left: 47%;
+      }
+
+      @include breakpoint-up(large) {
+        top: 44%;
+        left: 48%;
+      }
+
+      @include breakpoint-up(xlarge) {
+        left: 49%;
+      }
+    }
+  }
+}
