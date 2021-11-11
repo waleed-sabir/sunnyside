@@ -296,10 +296,10 @@ button {
   }
 }
 
-@media (min-width: 40em) and (min-width: 64em) {
+@media (min-width: 64em) {
   .hero__img {
     background-image: url(../images/desktop/image-header.jpg);
-    min-height: 100vh;
+    min-height: 100%;
   }
 }
 
