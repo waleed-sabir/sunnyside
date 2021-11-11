@@ -272,7 +272,7 @@ button {
 
 @media (min-width: 87.5em) {
   .hero {
-    height: 85.5vh;
+    height: 85.2vh;
   }
 }
 
@@ -301,6 +301,10 @@ button {
     background-image: url(../images/desktop/image-header.jpg);
     min-height: 100vh;
   }
+}
+
+.hero__text {
+  height: 100%;
 }
 
 .hero__text h1 {

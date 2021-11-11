@@ -7,7 +7,7 @@
   }
 
   @include breakpoint-up(xlarge) {
-    height: 85.5vh;
+    height: 85.2vh;
   }
 
   &__img {
@@ -35,6 +35,8 @@
   }
 
   &__text {
+    height: 100%;
+
     h1 {
       font-size: 3.4rem;
       position: absolute;
